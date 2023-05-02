@@ -32,7 +32,7 @@ public class CustomerServiceImpl extends ClientService implements CustomerServic
         }
         return true;
     }
-
+//
     @Override
     public void purchaseCoupon(int customerId, int couponId) throws CouponSystemException {
         Coupon coupon = couponRepository.getReferenceById(couponId);
