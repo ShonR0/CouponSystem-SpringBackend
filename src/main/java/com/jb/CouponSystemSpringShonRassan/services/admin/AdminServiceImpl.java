@@ -3,6 +3,7 @@ package com.jb.CouponSystemSpringShonRassan.services.admin;
 import com.jb.CouponSystemSpringShonRassan.Exceptions.CouponSystemException;
 import com.jb.CouponSystemSpringShonRassan.Exceptions.ErrorMsg;
 import com.jb.CouponSystemSpringShonRassan.beans.Company;
+import com.jb.CouponSystemSpringShonRassan.beans.Coupon;
 import com.jb.CouponSystemSpringShonRassan.beans.Customer;
 import com.jb.CouponSystemSpringShonRassan.services.ClientService;
 import org.springframework.stereotype.Service;
@@ -87,6 +88,11 @@ public class AdminServiceImpl extends ClientService implements AdminService{
     public Customer getSingleCustomer(int customerId) throws CouponSystemException {
         return this.customerRepository.findById(customerId)
                 .orElseThrow(()-> new CouponSystemException(ErrorMsg.ID_NOT_FOUND));
+    }
+
+    @Override
+    public List<Coupon> getAllCoupons() {
+        return couponRepository.findAll();
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.jb.CouponSystemSpringShonRassan.services.admin;
 
 import com.jb.CouponSystemSpringShonRassan.Exceptions.CouponSystemException;
 import com.jb.CouponSystemSpringShonRassan.beans.Company;
+import com.jb.CouponSystemSpringShonRassan.beans.Coupon;
 import com.jb.CouponSystemSpringShonRassan.beans.Customer;
 import org.springframework.stereotype.Service;
 
@@ -20,4 +21,5 @@ public interface AdminService {
     void deleteCustomer(int customerId) throws CouponSystemException;
     List<Customer> getAllCustomers();
     Customer getSingleCustomer(int customerId) throws CouponSystemException;
+    List<Coupon> getAllCoupons();
 }

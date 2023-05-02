@@ -1,6 +1,8 @@
 package com.jb.CouponSystemSpringShonRassan.Exceptions;
 
 
+import org.springframework.http.HttpStatus;
+
 public enum ErrorMsg {
     ID_NOT_FOUND("id not found"),
     ID_ALREADY_EXIST("id already exist"),
@@ -14,13 +16,14 @@ public enum ErrorMsg {
     COUPON_AMOUNT("cannot buy coupon with 0 amount"),
     COUPON_EXPIRED("You cannot buy an expired coupon"),
     COMPANY_NAME_NOT_FOUND("company name not exists"),
-    COUPON_NAME_EXISTS("your comapny already using that coupon name"),
+    COUPON_NAME_EXISTS("your company already using that coupon name"),
     COUPON_ALREADY_PURCHASED("can't buy coupon more than one time "),
     NOT_COMPANY_COUPON_DELETE("you cannot delete another company's coupon"),
     NOT_COMPANY_COUPON_("you cannot update another company's coupon"),
     COMPANY_NOT_EXISTS("company not exists"),
     PRICE_NOT_VALID("price must be higher than 0"),
-    COUPON_NOT_BELONG("this coupon id not belong to this company");
+    COUPON_NOT_BELONG("this coupon id not belong to this company"),
+    INVALID_EMAIL_OR_PASSWORD("Invalid email or password");
     private String message;
     ErrorMsg (String message) {
         this.message = message;

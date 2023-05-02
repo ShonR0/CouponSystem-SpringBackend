@@ -19,7 +19,7 @@ public class Coupon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false)
     private int id;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Category category;
     @Column(length = 40, nullable = false)
     private String title;
@@ -35,5 +35,9 @@ public class Coupon {
     @JoinColumn(updatable = false)
     @JsonIgnore
     private Company company;
+//    @ManyToMany
+//    @ToString.Exclude
+//    @JsonIgnore
+//    private Customer customer;
 
 }
